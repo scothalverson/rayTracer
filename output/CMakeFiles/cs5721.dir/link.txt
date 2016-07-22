@@ -1,0 +1,2 @@
+/usr/bin/ar cr libcs5721.a  CMakeFiles/cs5721.dir/cs5721GraphicsLib/writepng.cpp.o CMakeFiles/cs5721.dir/cs5721GraphicsLib/PNGImage.cpp.o
+/usr/bin/ranlib libcs5721.a

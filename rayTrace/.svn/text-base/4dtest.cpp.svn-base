@@ -1,0 +1,64 @@
+//vector4d & matrix4x4 testing
+
+#include <iostream>
+#include "vector3d.h"
+#include "vector4d.h"
+#include "Matrix4x4.h"
+#include "math.h"
+
+
+using namespace std;
+
+//magic inverse square root function 
+float InvSqrt(float x)
+{
+  float xhalf = 0.5f*x;
+  int i = *(int*)&x; // get bits for floating value
+  i = 0x5f375a86- (i>>1); // gives initial guess y0
+  x = *(float*)&i; // convert bits back to float
+  x = x*(1.5f-xhalf*x*x); // Newton step, repeating increases accuracy
+  return 1.0f/x;
+}
+
+//magic square root function 
+float SquareRootFloat(float number) {
+    long i;
+    float x, y;
+    const float f = 1.5F;
+
+    x = number * 0.5F;
+    y  = number;
+    i  = * ( long * ) &y;
+    i  = 0x5f375a86 - ( i >> 1 );
+    y  = * ( float * ) &i;
+    y  = y * ( f - ( x * y * y ) );
+    y  = y * ( f - ( x * y * y ) );
+    return number * y;
+}
+
+int main(){
+	
+	Vector3d v31(2,3,4);
+	Vector4d v41(2,2,2,1);
+	Vector4d v42(v31);
+
+
+	cout << v31.getX() << " " << v31.getY() << " " << v31.getZ() << endl;
+	cout << v41.getX() << " " << v41.getY() << " " << v41.getZ() << " " << v41.getW() << endl;
+	cout << v42.getX() << " " << v42.getY() << " " << v42.getZ() << " " << v42.getW() << endl;
+
+	Vector4d v43 = v41 + v42;
+
+	cout << v43.getX() << " " << v43.getY() << " " << v43.getZ() << " " << v43.getW() << endl;
+
+	Vector4d v44 = v41 + v31;
+
+	cout << v44.getX() << " " << v44.getY() << " " << v44.getZ() << " " << v44.getW() << endl;
+	
+	v44.set(1,2,3);
+
+	cout << v44.getX() << " " << v44.getY() << " " << v44.getZ() << " " << v44.getW() << endl;
+	
+	
+}
+

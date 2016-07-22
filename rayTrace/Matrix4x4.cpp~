@@ -1,0 +1,118 @@
+#include "Matrix4x4.h"
+#include <string>
+#include <stdio.h>
+#include <iostream>
+#include <sstream>
+#include "vector3d.h"
+#include "vector4d.h"
+
+using namespace std;
+
+
+//Sets the 16 values in the matrix via 4*4 array of floats
+void Matrix4x4::set(float newMatrix[4][4]){
+	for(int a = 0; a < 4; a++){
+		for(int b = 0; b < 4; b++){
+			m[a][b] = newMatrix[a][b];
+		}
+	}
+}
+
+//Clears the matrix to the identity matrix
+void Matrix4x4::set2Identity(){
+	for(int a = 0; a < 4; a++){
+		for(int b = 0; b < 4; b++){
+			if (a == b){
+				m[a][b] = 1.0;
+			}
+			else {m[a][b] = 0.0;}
+		}
+	}
+}
+
+//Returns a string representation of the 4x4 matrix
+string Matrix4x4::ToString(){
+	string s;
+	ostringstream oss;
+	for (int a = 0; a < 4; a++){
+		for (int b = 0; b < 4; b++){
+			oss << m[a][b] << " ";
+		}
+		oss << endl;
+	}
+	return oss.str();
+}
+
+//Returns the transpose of the matrix
+Matrix4x4 Matrix4x4::transpose(){
+	Matrix4x4 mat;
+	float mV[4][4];
+
+	for (int a = 0; a < 4; a++){
+		for (int b = 0; b < 4; b++){
+			mV[a][b] = m[b][a];
+		}
+	}
+	mat.set(mV);
+	return mat;
+}
+
+
+
+//Addition of two matrices
+Matrix4x4 Matrix4x4::operator+(Matrix4x4 second){
+	float newMat[4][4];
+	for (int a = 0; a < 4; a++){
+		for (int b = 0; b < 4; b++){
+			newMat[a][b] = m[a][b] + second.get(a,b);
+		}
+	}
+	Matrix4x4 newM;
+	newM.set(newMat);
+	return newM;
+}
+
+//Subtraction of one Matrix from another 
+Matrix4x4 Matrix4x4::operator-(Matrix4x4 second){
+float newMat[4][4];
+	for (int a = 0; a < 4; a++){
+		for (int b = 0; b < 4; b++){
+			newMat[a][b] = m[a][b] - second.get(a,b);
+		}
+	}
+	Matrix4x4 newM;
+	newM.set(newMat);
+	return newM;
+}
+
+//Matrix multiplication 
+Matrix4x4 Matrix4x4::operator*(Matrix4x4 second){
+	Matrix4x4 mat;
+	float mV[4][4];
+
+	for (int a = 0; a < 4; a++){
+		for (int b = 0; b < 4; b++){
+			mV[a][b] = m[a][0] * second.get(0,b) + m[a][1] * second.get(1,b) + m[a][2] * second.get(2,b) + m[a][3] * second.get(3,b);
+		}
+	}
+
+	mat.set(mV);
+	return mat;
+}
+
+//Matrix-Vector multiplication
+Vector4d Matrix4x4::operator*(Vector4d vector){
+  float vals[4];
+  float orig[4];
+  orig[0] = vector.getX();
+  orig[1] = vector.getY();
+  orig[2] = vector.getZ();
+  orig[3] = vector.getW();
+  for (int a = 0; a < 4; a++){
+    vals[a] = 0;
+    for (int b = 0; b < 4; b++){
+      vals += m[a][b] * orig[b];
+    }
+  }
+  return Vector4d(vals[0], vals[1], vals[2], vals[3]);
+}

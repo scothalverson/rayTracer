@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -O2    CMakeFiles/rayTracer.dir/rayTrace/rayTracer.cpp.o  -o rayTracer -rdynamic libcs5721.a -lpng libparser.a -lantlr 

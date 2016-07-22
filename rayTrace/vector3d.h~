@@ -1,0 +1,37 @@
+/********************************************************
+/	vector3d.h
+/	Scot Halverson
+/	Provides tools for creating and manipulating a three dimensional vector
+*/
+
+#ifndef VECTOR3DH
+#define VECTOR3DH 1
+
+#include <string>
+using namespace std;
+
+class Vector3d {
+public:
+	Vector3d();  //default constructor
+	Vector3d(float,float,float);  //Contrstuctor with parameters
+	virtual ~Vector3d();  //destructor
+	float length();  //method to get length
+	void set(float,float,float);  //method to set x & y values
+	Vector3d operator+(Vector3d);  //vector addition
+	Vector3d operator-(Vector3d);  //vector subtraction
+	Vector3d operator-();  //vector negation
+	Vector3d operator*(float);  //scalar multiplication
+	float getX();  //X accessor
+	float getY();  //Y accessor
+	float getZ();	//Z accessor
+	Vector3d normalize();  //normalizes the vector
+	float dotProduct(Vector3d);  //computes the dot product of two vectors
+	float operator*(Vector3d); // calls the dot product function
+	Vector3d crossProduct(Vector3d);  //computes the cross product of two 3d vectors
+private:
+	float v[3];  //array containing X,Y,Z
+};
+
+#include "vector3d.cpp"
+
+#endif /* VECTOR3DH */

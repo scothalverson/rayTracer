@@ -1,0 +1,136 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/Matrix4x4.h
+vector4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+string
+-
+point4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/point4d.h
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/color.h
+algorithm
+-
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/instanceShape.h
+shape.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/shape.h
+color.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/color.h
+Matrix4x4.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/Matrix4x4.h
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/light.h
+point4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/point4d.h
+ray4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/ray4d.h
+color.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/color.h
+string
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/string
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/point3d.h
+string
+-
+vector4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+math.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/math.h
+iostream
+-
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/point4d.h
+string
+-
+point3d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/point3d.h
+vector4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+math.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/math.h
+iostream
+-
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/ray4d.h
+point4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/point4d.h
+vector4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+iostream
+-
+math.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/math.h
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/shader.h
+light.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/light.h
+vector4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+color.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/color.h
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/shape.h
+color.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/color.h
+light.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/light.h
+shader.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/shader.h
+vector4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+list
+-
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/sphere.h
+shape.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/shape.h
+point4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/point4d.h
+ray4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/ray4d.h
+math.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/math.h
+vector4d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+shader.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/shader.h
+list
+-
+string
+-
+stdlib.h
+-
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/sphereInstance.cpp
+sphereInstance.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/sphereInstance.h
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/sphereInstance.h
+sphere.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/sphere.h
+instanceShape.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/instanceShape.h
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector3d.h
+iostream
+-
+math.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/math.h
+string
+-
+
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector4d.h
+string
+-
+math.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/math.h
+vector3d.h
+/home/csgrads/halve160/Documents/Advanced Computer Graphics/RayTracer/rayTrace/vector3d.h
+

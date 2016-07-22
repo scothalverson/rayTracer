@@ -1,0 +1,91 @@
+/********************************************************
+/	vector3d.cpp
+/	Scot Halverson
+/	Provides tools for creating and manipulating a three dimensional vector
+*/
+//#include "vector3d.h"
+#include <iostream>
+#include "math.h"
+
+using namespace std;
+
+inline Vector3d::Vector3d(){}
+
+//contsructor taking in change in x,y,& z
+inline Vector3d::Vector3d(float x, float y, float z) {
+	this->v[0] = x;
+	this->v[1] = y;
+	this->v[2] = z;
+}
+
+inline Vector3d::~Vector3d() {}
+
+//Returns the length of the vector
+inline float Vector3d::length(){
+	return sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2]);
+}
+
+//Provides a means for changing the x,y,z values for the vector
+inline void Vector3d::set(float x, float y, float z){
+	this->v[0] = x;
+	this->v[1] = y;
+	this->v[2] = z;
+}
+
+//Provides a means for adding two 3d vectors 
+inline Vector3d Vector3d::operator +(Vector3d v2){
+	return Vector3d(this->getX() + v2.getX(), this->getY() + v2.getY(), this->getZ() + v2.getZ());
+}
+
+//Provides a means for subtracting one 3d vector from another
+inline Vector3d Vector3d::operator -(Vector3d v2){
+	return Vector3d(this->getX() - v2.getX(), this->getY() - v2.getY(), this->getZ() - v2.getZ());
+}
+
+inline Vector3d Vector3d::operator -(){
+	return Vector3d(this->getX() * -1, this->getY() * -1, this->getZ() * -1);
+}
+
+//Multiplies the vector by a contstant/scalar
+inline Vector3d Vector3d::operator *(float scalar){
+	return Vector3d(this->getX()*scalar, this->getY() * scalar, this->getZ() * scalar);
+}
+
+//creates a unit vector parallel to the vector
+inline Vector3d Vector3d::normalize(){
+	float div = (1/this->length());
+	return Vector3d(this->getX()*div, this->getY()*div, this->getZ()*div);
+}
+
+//computes the dot product of two vectors
+inline float Vector3d::dotProduct(Vector3d v2){
+	return ((this->getX() * v2.getX()) + (this->getY() * v2.getY()) + (this->getZ() * v2.getZ()));
+}
+
+inline float Vector3d::operator*(Vector3d v2){
+	return dotProduct(v2);
+}
+
+//creates a vector that is perpendicular to the two given vectors.  
+Vector3d Vector3d::crossProduct(Vector3d v2){
+	float x = (this->getY() * v2.getZ()) - (v2.getY() * this->getZ());
+	float y = (this->getZ() * v2.getX()) - (v2.getZ() * this->getX());
+	float z = (this->getX() * v2.getY()) - (v2.getX() * this->getY());
+
+	return Vector3d(x,y,z);
+}
+
+//accessor for X
+inline float Vector3d::getX(){
+	return v[0];
+}
+
+//accessor for Y
+inline float Vector3d::getY(){
+	return v[1];
+}
+
+//accessor for Z
+inline float Vector3d::getZ(){
+	return v[2];
+}
